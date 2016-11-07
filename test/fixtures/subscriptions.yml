@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subreddit: MyString
+  type: 
+  user: one
+
+two:
+  subreddit: MyString
+  type: 
+  user: two
