@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Basic::ControllerMethods
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
-  before_filter :authenticate_user_from_token, except: [:token]
+	before_filter :authenticate_user_from_token, except: [:token]
 
   private
   def authenticate_user_from_token
@@ -11,6 +11,7 @@ class ApplicationController < ActionController::API
     end
   end
 
+  public
   def default_serializer_options
     { root: false }
   end
@@ -25,4 +26,5 @@ class ApplicationController < ActionController::API
       end
     end
   end
+
 end
