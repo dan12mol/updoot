@@ -5,4 +5,5 @@ class SubscriptionMailer < ApplicationMailer
     @user = user
     mail(to: @user.email, subject: 'Updoot digest')
   end
+
 end

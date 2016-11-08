@@ -29,4 +29,14 @@ class ApplicationController < ActionController::API
     render file: Rails.public_path.join('index.html'), layout: false
   end
 
+  def self.generate_daily_emails
+    Rails.logger.debug('aaa')
+    subscriptions = Subscription.where(sub_type: 'daily')
+    subscriptions.each do |subscription|
+      user = subscription.user
+      response = Unirest.get "http://reddit.com/r/#{subscription.subreddit}/top.json?limit=3&t=day"
+      # TODO: actually send email
+    end
+  end
+
 end
