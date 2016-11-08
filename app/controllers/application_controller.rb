@@ -30,7 +30,6 @@ class ApplicationController < ActionController::API
   end
 
   def self.generate_daily_emails
-    Rails.logger.debug('aaa')
     subscriptions = Subscription.where(sub_type: 'daily')
     subscriptions.each do |subscription|
       user = subscription.user
